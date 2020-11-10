@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+</head>
+
+<body>
+
+    <p>
+        Note: please put values for string-type attributes in quotes. i.e "Monitor" for pname or "Grey" 
+        for color!
+    </p>
+    <h2>Query 1</h2>
+    <p>
+        Please enter the name of a part! This query will retrieve information about each supplier 
+        who supplies this part. The information returned depends on what attributes are chosen in the 
+        check boxes below. 
+    </p>
+
+    <form action = "/cgi-bin/Query1.py" method = "POST">
+        pname: <input type = "text" name = "pname">
+        <input type ="submit" value = "Submit"><br />
+        <input type = "checkbox" name = "sid" value = "on" /> sid
+        <input type = "checkbox" name = "sname" value = "on" /> sname
+        <input type = "checkbox" name = "address" value = "on" /> address 
+        <input type = "checkbox" name = "cost" value = "on" /> cost
+        
+    </form>
+
+    <h2>Query 2</h2>
+    <p>
+        Please enter a cost! This query will return the names of suppliers who have 
+        ever supplied a part with equal or greater cost.
+    </p>
+    <form action = "/cgi-bin/Query2.py" method = "POST">
+        cost: <input type = "text" name = "cost">
+        <input type ="submit" value = "Submit"><br />
+    </form>
+
+    <h2>Query 3</h2>
+    <p>
+       Please enter a pid! This query will return the names and addresses of the suppliers that 
+       charge the most for the part with the given pid. 
+    </p>
+    <form action = "/cgi-bin/Query3.py" method = "POST">
+        pid: <input type = "text" name = "pid">
+        <input type ="submit" value = "Submit"><br />
+
+    </form>
+
+    <h2>Query 4</h2>
+    <p>
+        Please enter a color and an address! This query will return the names of parts with the given color
+        that were supplied by all of the suppliers at the given address
+    </p>
+    <form action = "/cgi-bin/Query4.py" method = "POST">
+        color: <input type = "text" name = "color"> <br/>
+        address: <input type = "text" name = "address">
+        <input type ="submit" value = "Submit"><br />
+    </form>
+
+    <h2>Query 5</h2>
+    <p>
+        Please enter an address! This query will return the sids and names of suppliers in that address 
+        who do not supply any part. 
+    </p>
+    <form action = "/cgi-bin/Query5.py" method = "POST">
+        address: <input type = "text" name = "address">
+        <input type ="submit" value = "Submit"><br />
+    </form>
+
+</body>
+
+
+</html>
